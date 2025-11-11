@@ -63,3 +63,32 @@ function schimbaViata() {
         imagineElement.style.transition = 'none'; 
     }
 }
+function calculeazaVarsta(anNastere) {
+    const element = document.getElementById('an-nastere-info');
+    if (element) {
+        // Obține anul curent
+        const anCurent = new Date().getFullYear();
+        // Calculează vârsta
+        const varsta = anCurent - anNastere;
+        
+        // Modifică conținutul elementului
+        element.textContent = `Vârsta: ${varsta} ani`;
+        
+        // Modifică stilul elementului (Opțional)
+        element.style.color = '#e74c3c'; 
+        element.style.fontWeight = 'bold';
+    }
+}
+
+// Functie apelata la evenimentul onmouseout
+function revinoLaAnNastere(anNastere) {
+    const element = document.getElementById('an-nastere-info');
+    if (element) {
+        // Revine la conținutul inițial
+        element.textContent = `Anul nașterii: ${anNastere}`;
+        
+        // Revine la stilul inițial (Opțional)
+        element.style.color = 'inherit'; // Revine la culoarea părinte
+        element.style.fontWeight = 'normal';
+    }
+}
